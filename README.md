@@ -20,7 +20,6 @@ It allows multiple clients to connect to a server and exchange messages in real 
 
 ## Technologies
 
-- Python 3
 - `socket` module (standard library)
 - `threading` module for concurrent client handling
 
