@@ -1,15 +1,22 @@
 # Python Chat Client-Server
 
-A simple **client-server chat application** built with Python using sockets and multithreading. This project allows multiple clients to connect to a server and exchange messages in real time via the terminal.
+A simple **client-server chat application** built in Python using sockets and multithreading.  
+The project supports:
+
+- **TCP** connection for broadcast messaging
+- **UDP** peer-to-peer connection for private messages
+
+It allows multiple clients to connect to a server and exchange messages in real time via the terminal.
+
+---
 
 ## Features
 
-- Start a **server** that listens for incoming client connections
-- Connect one or more **clients** to the server (max 5)
-- Broadcast messages to all connected clients
-- Private messages between two users
-- Real-time messaging from the terminal
-- Basic handling of disconnected clients
+- Start a **server** to manage up to **5 simultaneous clients**
+- Real-time **broadcast messaging** to all connected users (via TCP)
+- **Private messaging** between two users (via UDP)
+- Simple terminal interface for sending/receiving messages
+- Manual setup of client identity and ports
 
 ## Technologies
 
@@ -20,16 +27,26 @@ A simple **client-server chat application** built with Python using sockets and 
 ## How to Run
 
 ### 1. Start the server
+- 127.0.0.1 = local loopback address
+- 8888 = TCP port the server will listen on
 
 ```bash
 python chat_server.py 127.0.0.1 8888
 ```
 
 ### 2. Start clients
-examples
+Choose your names, loopback address and id port. 
+- A name
+- 127.0.0.1 = local loopback address, server IP
+- unique port fot the client
+  
+Examples:
 ```bash
 python chat_client.py Alice 127.0.0.1 2000
 ```
 ```bash
 python chat_client.py Bob 127.0.0.1 2001
+```
+```bash
+python chat_client.py Tom 127.0.0.1 2002
 ```
